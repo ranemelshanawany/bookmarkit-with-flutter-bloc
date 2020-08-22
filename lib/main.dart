@@ -5,7 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(BlocProvider(
-      create: (BuildContext context) => BookmarkBloc(Loading()), child: MyApp()));
+      create: (BuildContext context) => BookmarkBloc(Loading()),
+      child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

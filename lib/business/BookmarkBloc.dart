@@ -32,7 +32,7 @@ class NotLoaded extends BookmarkState {}
 
 class BookmarkBloc extends Bloc<BookmarkEvents, BookmarkState> {
 
-  BookmarkBloc(BookmarkState initialState) : super(Loading());
+  BookmarkBloc(BookmarkState initialState) : super(initialState);
 
   @override
   Stream<BookmarkState> mapEventToState(BookmarkEvents event) async* {
