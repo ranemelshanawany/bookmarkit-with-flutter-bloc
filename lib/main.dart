@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'business/BookmarkProvider.dart';
+import 'business/BookmarkBloc.dart';
 import 'ui/BookmarkListPage.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider<BookmarkProvider>.value(value: BookmarkProvider())
-  ], child: MyApp()));
+  runApp(BlocProvider(
+      create: (BuildContext context) => BookmarkBloc(Loading()), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

@@ -15,21 +15,41 @@ class DetailScreen extends StatelessWidget {
         padding: EdgeInsets.all(16.0),
         child: Column(
           children: <Widget>[
-            Image.network(bookmark.urlToImage, fit: BoxFit.cover),
-            Text(
-              bookmark.title,
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              bookmark.description,
-              style: TextStyle(fontSize: 20),
-            ),
+            _buildImage(),
+            _buildTitle(),
+            _spacing(20),
+            _buildDescription(),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildTitle()
+  {
+    return Text(
+      bookmark.title,
+      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+    );
+  }
+
+  Widget _buildDescription()
+  {
+    return Text(
+      bookmark.description,
+      style: TextStyle(fontSize: 20),
+    );
+  }
+
+  Widget _buildImage()
+  {
+    return Image.network(bookmark.urlToImage, fit: BoxFit.cover);
+  }
+
+  Widget _spacing(double size)
+  {
+    return SizedBox(
+      height: size,
     );
   }
 }
