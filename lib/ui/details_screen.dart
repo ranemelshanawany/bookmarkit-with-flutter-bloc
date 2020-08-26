@@ -25,29 +25,25 @@ class DetailScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildTitle()
-  {
+  Widget _buildTitle() {
     return Text(
       bookmark.title,
       style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
     );
   }
 
-  Widget _buildDescription()
-  {
+  Widget _buildDescription() {
     return Text(
       bookmark.description,
       style: TextStyle(fontSize: 20),
     );
   }
 
-  Widget _buildImage()
-  {
+  Widget _buildImage() {
     return Image.network(bookmark.urlToImage, fit: BoxFit.cover);
   }
 
-  Widget _spacing(double size)
-  {
+  Widget _spacing(double size) {
     return SizedBox(
       height: size,
     );
